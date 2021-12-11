@@ -38,6 +38,9 @@ dependencies:
   json_annotation: ^4.4.0
   json_serializable: ^6.1.1
 
+  # State management
+  get: ^4.5.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
