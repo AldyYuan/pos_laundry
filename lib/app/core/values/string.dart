@@ -9,4 +9,4 @@ const String jwtToken =
 
 // Collection Firestore
 const String cTransaction = 'Transaksi';
-const String cLayanan = 'Layanan';
+const String cService = 'Layanan';

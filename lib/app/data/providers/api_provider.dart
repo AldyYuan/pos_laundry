@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:pos_laundry/app/core/values/string.dart';
 import 'package:pos_laundry/app/data/models/data_service/data_service_model.dart';
 
-class DataServiceProvider extends GetConnect {
+class ApiProvider extends GetConnect {
   @override
   void onInit() {
     // Konfigurasi httpClient
