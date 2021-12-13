@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
+import 'package:pos_laundry/app/core/values/strings.dart';
 
 import 'app/core/themes/theme_data.dart';
 import 'firebase_options.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'POS Laundry',
+      title: appName,
       debugShowCheckedModeBanner: false,
       theme: themeData,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),

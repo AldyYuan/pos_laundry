@@ -10,3 +10,6 @@ const String jwtToken =
 // Collection Firestore
 const String cTransaction = 'Transaksi';
 const String cService = 'Layanan';
+
+// Informasi Assets
+const String profilePic = 'assets/images/profile_pic.svg';

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:pos_laundry/app/core/values/string.dart';
+import 'package:pos_laundry/app/core/values/strings.dart';
 import 'package:pos_laundry/app/data/models/data_service/data_service_model.dart';
 
 class ApiProvider extends GetConnect {

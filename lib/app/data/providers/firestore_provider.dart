@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:pos_laundry/app/core/values/string.dart';
+import 'package:pos_laundry/app/core/values/strings.dart';
 import 'package:pos_laundry/app/data/models/service/service_model.dart';
 import 'package:pos_laundry/app/data/models/transaction/transaction_model.dart';
 
@@ -10,6 +10,18 @@ class FirestoreProvider {
   Future<QuerySnapshot<Map<String, dynamic>>>
       getTransactionCollection() async =>
           await _firestore.collection(cTransaction).get();
+
+  // Stream data transaksi terbaru
+  Stream<QuerySnapshot<Map<String, dynamic>>> snapshotsRecentTransaction() =>
+      _firestore
+          .collection(cTransaction)
+          .orderBy('tgl_buat', descending: true)
+          .limit(7)
+          .snapshots();
+
+  // Stream data transaksi
+  Stream<QuerySnapshot<Map<String, dynamic>>> snapshotsTransaction() =>
+      _firestore.collection(cTransaction).snapshots();
 
   // Ambil data koleksi layanan berdasarkan id_transaksi
   Future<QuerySnapshot<Map<String, dynamic>>> getServiceCollection(
