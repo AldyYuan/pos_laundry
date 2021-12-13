@@ -14,6 +14,7 @@ class RecentTransactionList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(32.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             "Transaksi Terbaru",

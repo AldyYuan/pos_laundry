@@ -33,18 +33,18 @@ class IncomeCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(height: 8.0),
+            const SizedBox(height: 16.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Icon(
                   Icons.local_laundry_service_rounded,
                   color: white,
-                  size: 32,
+                  size: 36,
                 ),
                 Container(
-                  width: 52,
-                  height: 52,
+                  width: 36,
+                  height: 36,
                   decoration: BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(20.0),

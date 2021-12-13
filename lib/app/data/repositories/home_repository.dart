@@ -1,4 +1,3 @@
-import 'package:pos_laundry/app/data/models/data_service/data_service_model.dart';
 import 'package:pos_laundry/app/data/models/transaction/transaction_model.dart';
 import 'package:pos_laundry/app/data/providers/firestore_provider.dart';
 

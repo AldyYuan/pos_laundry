@@ -51,7 +51,7 @@ class MenuButton extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 16.0),
+          const SizedBox(width: 24.0),
           InkWell(
             onTap: () {},
             child: Container(
@@ -92,7 +92,7 @@ class MenuButton extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 16.0),
+          const SizedBox(width: 24.0),
           const SizedBox(
             width: 66,
             child: Center(

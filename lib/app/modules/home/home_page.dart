@@ -9,18 +9,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            // Card pendapatan
-            IncomeCard(),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              // Card pendapatan
+              IncomeCard(),
+              SizedBox(height: 32.0),
 
-            // Tombol menu
-            MenuButton(),
+              // Tombol menu
+              MenuButton(),
+              SizedBox(height: 16.0),
 
-            // Daftar transaksi terbaru
-            RecentTransactionList(),
-          ],
+              // Daftar transaksi terbaru
+              RecentTransactionList(),
+            ],
+          ),
         ),
       ),
     );
