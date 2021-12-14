@@ -8,17 +8,17 @@ part of 'transaction_model.dart';
 
 TransactionModel _$TransactionModelFromJson(Map<String, dynamic> json) =>
     TransactionModel(
-      json['id'] as String,
-      json['nama_customer'] as String?,
-      json['total_tagihan'] as int?,
-      json['keterangan'] as String?,
-      json['tgl_buat'] == null
+      id: json['id'] as String,
+    )
+      ..namaCustomer = json['nama_customer'] as String?
+      ..totalTagihan = json['total_tagihan'] as int?
+      ..keterangan = json['keterangan'] as String?
+      ..tglBuat = json['tgl_buat'] == null
           ? null
-          : DateTime.parse(json['tgl_buat'] as String),
-      json['tgl_selesai'] == null
+          : DateTime.parse(json['tgl_buat'] as String)
+      ..tglSelesai = json['tgl_selesai'] == null
           ? null
-          : DateTime.parse(json['tgl_selesai'] as String),
-    );
+          : DateTime.parse(json['tgl_selesai'] as String);
 
 Map<String, dynamic> _$TransactionModelToJson(TransactionModel instance) =>
     <String, dynamic>{

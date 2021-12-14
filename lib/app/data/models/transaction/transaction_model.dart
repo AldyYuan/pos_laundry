@@ -8,28 +8,23 @@ class TransactionModel {
   final String id;
 
   @JsonKey(name: 'nama_customer')
-  final String? namaCustomer;
+  String? namaCustomer;
 
   @JsonKey(name: 'total_tagihan')
-  final int? totalTagihan;
+  int? totalTagihan;
 
   @JsonKey(name: 'keterangan')
-  final String? keterangan;
+  String? keterangan;
 
   @JsonKey(name: 'tgl_buat')
-  final DateTime? tglBuat;
+  DateTime? tglBuat;
 
   @JsonKey(name: 'tgl_selesai')
-  final DateTime? tglSelesai;
+  DateTime? tglSelesai;
 
-  TransactionModel(
-    this.id,
-    this.namaCustomer,
-    this.totalTagihan,
-    this.keterangan,
-    this.tglBuat,
-    this.tglSelesai,
-  );
+  TransactionModel({
+    required this.id,
+  });
 
   factory TransactionModel.fromJson(Map<String, dynamic> json) =>
       _$TransactionModelFromJson(json);

@@ -12,7 +12,7 @@ DataService _$DataServiceFromJson(Map<String, dynamic> json) => DataService(
       json['jumlah'] as int,
       json['durasi_penyelesaian'] as int,
       json['idsatuan'] as int,
-      json['harga'] as int,
+      (json['harga'] as num).toDouble(),
       json['nama_satuan'] as String,
       DateTime.parse(json['created_at'] as String),
       DateTime.parse(json['updated_at'] as String),

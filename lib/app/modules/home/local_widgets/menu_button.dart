@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pos_laundry/app/core/values/colors.dart';
+import 'package:pos_laundry/app/routes/app_pages.dart';
 
 class MenuButton extends StatelessWidget {
   const MenuButton({Key? key}) : super(key: key);
@@ -12,7 +14,13 @@ class MenuButton extends StatelessWidget {
         children: [
           const SizedBox(width: 32.0),
           InkWell(
-            onTap: () {},
+            onTap: () async {
+              var result = await Get.toNamed(Routes.chooseService);
+
+              if (result != null) {
+                debugPrint("Result: " + result.toString());
+              }
+            },
             child: Container(
               width: 106,
               decoration: BoxDecoration(

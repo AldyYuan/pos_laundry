@@ -20,7 +20,7 @@ class DataService {
   final int idSatuan;
 
   @JsonKey(name: 'harga')
-  final int harga;
+  final double harga;
 
   @JsonKey(name: 'nama_satuan')
   final String namaSatuan;
