@@ -11,7 +11,7 @@ TransactionModel _$TransactionModelFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
     )
       ..namaCustomer = json['nama_customer'] as String?
-      ..totalTagihan = json['total_tagihan'] as int?
+      ..totalTagihan = (json['total_tagihan'] as num?)?.toDouble()
       ..keterangan = json['keterangan'] as String?
       ..tglBuat = json['tgl_buat'] == null
           ? null

@@ -11,7 +11,7 @@ class TransactionModel {
   String? namaCustomer;
 
   @JsonKey(name: 'total_tagihan')
-  int? totalTagihan;
+  double? totalTagihan;
 
   @JsonKey(name: 'keterangan')
   String? keterangan;

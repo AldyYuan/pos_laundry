@@ -14,13 +14,7 @@ class MenuButton extends StatelessWidget {
         children: [
           const SizedBox(width: 32.0),
           InkWell(
-            onTap: () async {
-              var result = await Get.toNamed(Routes.chooseService);
-
-              if (result != null) {
-                debugPrint("Result: " + result.toString());
-              }
-            },
+            onTap: () => Get.toNamed(Routes.addTransaction),
             child: Container(
               width: 106,
               decoration: BoxDecoration(

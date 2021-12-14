@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:pos_laundry/app/modules/add_transaction/add_transaction_bidding.dart';
+import 'package:pos_laundry/app/modules/add_transaction/add_transaction_page.dart';
 import 'package:pos_laundry/app/modules/choose_service/choose_service.page.dart';
 import 'package:pos_laundry/app/modules/choose_service/choose_service_binding.dart';
 import 'package:pos_laundry/app/modules/home/home_binding.dart';
@@ -17,6 +19,11 @@ class AppPages {
       name: Routes.chooseService,
       page: () => const ChooseServicePage(),
       binding: ChooseServiceBinding(),
+    ),
+    GetPage(
+      name: Routes.addTransaction,
+      page: () => const AddTransactionPage(),
+      binding: AddTransactionBinding(),
     ),
   ];
 }

@@ -11,9 +11,9 @@ ServiceModel _$ServiceModelFromJson(Map<String, dynamic> json) => ServiceModel(
       json['id_layanan'] as String,
       json['id_transaksi'] as String,
       json['nama_layanan'] as String,
-      json['jumlah_pembelian'] as String,
-      json['harga_layanan'] as int,
-      json['harga_total'] as int,
+      json['jumlah_pembelian'] as int,
+      (json['harga_layanan'] as num).toDouble(),
+      (json['harga_total'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$ServiceModelToJson(ServiceModel instance) =>

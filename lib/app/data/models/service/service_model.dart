@@ -17,13 +17,13 @@ class ServiceModel {
   final String namaLayanan;
 
   @JsonKey(name: 'jumlah_pembelian')
-  final String jumlahPembelian;
+  final int jumlahPembelian;
 
   @JsonKey(name: 'harga_layanan')
-  final int hargaLayanan;
+  final double hargaLayanan;
 
   @JsonKey(name: 'harga_total')
-  final int hargaTotal;
+  final double hargaTotal;
 
   ServiceModel(
     this.id,

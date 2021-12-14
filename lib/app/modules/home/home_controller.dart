@@ -13,8 +13,8 @@ class HomeController extends GetxController {
       Rx<List<TransactionModel>>([]);
   List<TransactionModel> get recentTransaction => _recentTransaction.value;
 
-  final Rx<int> _income = 0.obs;
-  int get income => _income.value;
+  final Rx<double> _income = 0.0.obs;
+  double get income => _income.value;
 
   final Rx<bool> _isLoading = true.obs;
   bool get isLoading => _isLoading.value;
