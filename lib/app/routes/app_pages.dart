@@ -7,6 +7,8 @@ import 'package:pos_laundry/app/modules/home/home_binding.dart';
 import 'package:pos_laundry/app/modules/home/home_page.dart';
 import 'package:pos_laundry/app/modules/review_transaction/review_transaction_bidding.dart';
 import 'package:pos_laundry/app/modules/review_transaction/review_transaction_page.dart';
+import 'package:pos_laundry/app/modules/transaction_list/transaction_list_bidding.dart';
+import 'package:pos_laundry/app/modules/transaction_list/transaction_list_page.dart';
 
 part './app_routes.dart';
 
@@ -31,6 +33,11 @@ class AppPages {
       name: Routes.reviewTransaction,
       page: () => const ReviewTransactionPage(),
       binding: ReviewTransactionBinding(),
+    ),
+    GetPage(
+      name: Routes.transactionList,
+      page: () => const TransactionListPage(),
+      binding: TransactionListBinding(),
     ),
   ];
 }

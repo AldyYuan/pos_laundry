@@ -55,7 +55,7 @@ class MenuButton extends StatelessWidget {
           ),
           const SizedBox(width: 24.0),
           InkWell(
-            onTap: () {},
+            onTap: () => Get.toNamed(Routes.transactionList),
             child: Container(
               width: 106,
               decoration: BoxDecoration(
