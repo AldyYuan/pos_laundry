@@ -3,6 +3,8 @@ import 'package:pos_laundry/app/modules/add_transaction/add_transaction_bidding.
 import 'package:pos_laundry/app/modules/add_transaction/add_transaction_page.dart';
 import 'package:pos_laundry/app/modules/choose_service/choose_service.page.dart';
 import 'package:pos_laundry/app/modules/choose_service/choose_service_binding.dart';
+import 'package:pos_laundry/app/modules/detail_transaction/detail_transaction_bidding.dart';
+import 'package:pos_laundry/app/modules/detail_transaction/detail_transaction_page.dart';
 import 'package:pos_laundry/app/modules/home/home_binding.dart';
 import 'package:pos_laundry/app/modules/home/home_page.dart';
 import 'package:pos_laundry/app/modules/review_transaction/review_transaction_bidding.dart';
@@ -38,6 +40,11 @@ class AppPages {
       name: Routes.transactionList,
       page: () => const TransactionListPage(),
       binding: TransactionListBinding(),
+    ),
+    GetPage(
+      name: Routes.detailTransaction,
+      page: () => const DetailTransactionPage(),
+      binding: DetailTransactionBinding(),
     ),
   ];
 }

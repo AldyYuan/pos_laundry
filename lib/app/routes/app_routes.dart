@@ -6,4 +6,5 @@ class Routes {
   static const String addTransaction = '/add_transaction';
   static const String reviewTransaction = '/review_transaction';
   static const String transactionList = '/daftar_transaksi';
+  static const String detailTransaction = '/detail_transaksi';
 }

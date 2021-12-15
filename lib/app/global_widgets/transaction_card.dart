@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:pos_laundry/app/core/values/colors.dart';
 import 'package:pos_laundry/app/data/models/transaction/transaction_model.dart';
+import 'package:pos_laundry/app/routes/app_pages.dart';
 
 class TransactionCard extends StatelessWidget {
   final TransactionModel transaction;
@@ -25,6 +27,8 @@ class TransactionCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: ListTile(
+          onTap: () =>
+              Get.toNamed(Routes.detailTransaction, arguments: transaction),
           leading: const CircleAvatar(
             backgroundColor: grey,
             child: Icon(
