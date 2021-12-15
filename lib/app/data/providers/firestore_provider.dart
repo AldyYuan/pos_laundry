@@ -33,11 +33,17 @@ class FirestoreProvider {
 
   // Menyimpan data transaksi
   Future<void> saveTransaction(TransactionModel data) async {
-    await _firestore.collection(cTransaction).add(data.toJson());
+    await _firestore.doc("$cTransaction/${data.id}").set(
+          data.toJson(),
+          SetOptions(merge: true),
+        );
   }
 
   // Menyimpan data layanan
   Future<void> saveService(ServiceModel data) async {
-    await _firestore.collection(cService).add(data.toJson());
+    await _firestore.doc("$cService/${data.id}").set(
+          data.toJson(),
+          SetOptions(merge: true),
+        );
   }
 }

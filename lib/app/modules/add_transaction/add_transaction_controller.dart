@@ -32,6 +32,10 @@ class AddTransactionController extends GetxController {
     _transaction.value.namaCustomer = value;
   }
 
+  setKeterangan(String value) {
+    _transaction.value.keterangan = value;
+  }
+
   chooseService() async {
     var result = await Get.toNamed(Routes.chooseService);
 
@@ -44,8 +48,7 @@ class AddTransactionController extends GetxController {
 
       // Total tagihan transaksi
       double hargaTotal = totalService * dataService.harga;
-      _transaction.value.totalTagihan =
-          _transaction.value.totalTagihan ?? 0 + hargaTotal;
+      _transaction.value.totalTagihan += hargaTotal;
 
       // Durasi penyelesaian paling lama
       _finishTime.value = _finishTime.value >= dataService.durasiPenyelesaian
@@ -61,6 +64,20 @@ class AddTransactionController extends GetxController {
         _transaction.value.tglSelesai = endDate;
 
         _transaction.refresh();
+      }
+
+      // Check layanan yang sama
+      if (_services.value
+          .any((element) => element.idLayanan == dataService.idLayanan)) {
+        // Index data layanan yang sama
+        int index = _services.value.indexWhere(
+            (element) => element.idLayanan == dataService.idLayanan);
+
+        // Update jumlah pembelian dan harga total
+        _services.value[index].jumlahPembelian += totalService;
+        _services.value[index].hargaTotal += hargaTotal;
+        _services.refresh();
+        return;
       }
 
       // Data yang disimpan pada layanan saat transaksi

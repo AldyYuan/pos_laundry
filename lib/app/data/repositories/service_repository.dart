@@ -18,7 +18,4 @@ class ServiceRepository {
 
     return [];
   }
-
-  Future<void> saveService(ServiceModel data) async =>
-      await provider.saveService(data);
 }

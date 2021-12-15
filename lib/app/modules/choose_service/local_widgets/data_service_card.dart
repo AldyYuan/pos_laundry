@@ -46,10 +46,10 @@ class DataServiceCard extends StatelessWidget {
               Text("Harga: ${NumberFormat.simpleCurrency(
                 locale: 'id_ID',
                 decimalDigits: 0,
-              ).format(data.harga)}"),
+              ).format(data.harga)} / ${data.namaSatuan}"),
               const SizedBox(height: 4.0),
               Text(
-                "Durasi Penyelesaian: ${countDuration(Duration(milliseconds: data.durasiPenyelesaian))} / ${data.namaSatuan}",
+                "Durasi Penyelesaian: ${countDuration(Duration(milliseconds: data.durasiPenyelesaian))}",
               ),
             ],
           ),

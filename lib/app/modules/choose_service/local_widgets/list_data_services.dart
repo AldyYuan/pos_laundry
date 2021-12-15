@@ -17,7 +17,7 @@ class ListDataServices extends StatelessWidget {
           : controller.isSearching && controller.searchList.isEmpty
               ? const Center(
                   child: Text(
-                    "Data layanan tidak ada,\n coba dengan kata kunci lain.",
+                    "Data layanan tidak ada, coba dengan kata kunci lain.",
                   ),
                 )
               : controller.searchList.isNotEmpty

@@ -4,6 +4,7 @@ import 'package:pos_laundry/app/core/themes/text_theme.dart';
 import 'package:pos_laundry/app/core/values/colors.dart';
 import 'package:pos_laundry/app/modules/add_transaction/add_transaction_controller.dart';
 import 'package:pos_laundry/app/modules/add_transaction/local_widgets/choose_service.dart';
+import 'package:pos_laundry/app/routes/app_pages.dart';
 
 import 'local_widgets/choose_date.dart';
 
@@ -19,27 +20,33 @@ class AddTransactionPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Buat Transaksi"),
       ),
-      floatingActionButton: Obx(
-        () => FloatingActionButton.extended(
-          backgroundColor: primaryColor,
-          onPressed: () {
-            if (_controller.services.isEmpty ||
-                _controller.transaction.tglBuat == null) {
-              Get.snackbar(
-                'Tidak bisa lanjut',
-                'Data transaksi masih ada yang kosong',
-                backgroundColor: primaryDark,
-                colorText: white,
-              );
-              return;
-            }
-            if (_formKey.currentState!.validate()) {}
-          },
-          label: Text(
-            "Lanjut",
-            style: bold.copyWith(
-              color: white,
-            ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: primaryColor,
+        onPressed: () {
+          if (_controller.services.isEmpty ||
+              _controller.transaction.tglBuat == null) {
+            Get.snackbar(
+              'Tidak bisa lanjut',
+              'Data transaksi masih ada yang kosong',
+              backgroundColor: primaryDark,
+              colorText: white,
+            );
+            return;
+          }
+          if (_formKey.currentState!.validate()) {
+            // Data transaksi
+            Map<String, dynamic> data = {
+              'transaction': _controller.transaction.toJson(),
+              'services': _controller.services.map((e) => e.toJson()).toList(),
+            };
+
+            Get.toNamed(Routes.reviewTransaction, arguments: data);
+          }
+        },
+        label: Text(
+          "Lanjut",
+          style: bold.copyWith(
+            color: white,
           ),
         ),
       ),
@@ -73,6 +80,14 @@ class AddTransactionPage extends StatelessWidget {
 
                 // Pilih Tanggal Transaksi
                 const ChooseDate(),
+                const SizedBox(height: 16.0),
+
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: 'Keterangan (opsional)',
+                  ),
+                  onChanged: (value) => _controller.setKeterangan(value),
+                ),
               ],
             ),
           ),

@@ -18,7 +18,4 @@ class TransactionRepository {
 
     return [];
   }
-
-  Future<void> saveTransaction(TransactionModel data) async =>
-      await provider.saveTransaction(data);
 }

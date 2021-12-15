@@ -34,7 +34,7 @@ class HomeController extends GetxController {
 
       // Menghitung total pendapatan dari setiap total tagihan transaksi
       for (var element in data) {
-        _income.value += element.totalTagihan!;
+        _income.value += element.totalTagihan;
       }
     });
 
